@@ -53,7 +53,8 @@ from rag_engine import (
     clear_index,
     get_knowledge_status,
     get_documents,
-    delete_document
+    delete_document,
+    UPLOAD_DIR
 )
 
 
@@ -65,8 +66,6 @@ app = Flask(__name__)
 
 app.config["MAX_CONTENT_LENGTH"] = 10 * 1024 * 1024
 
-UPLOAD_DIR = BASE_DIR / "uploads"
-UPLOAD_DIR.mkdir(exist_ok=True)
 
 ALLOWED_EXTENSIONS = {
     ".pdf",

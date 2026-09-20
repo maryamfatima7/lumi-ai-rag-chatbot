@@ -32,16 +32,16 @@ if not API_KEY:
 client = genai.Client(api_key=API_KEY)
 
 
+
 # ============================================================
 # DIRECTORIES
 # ============================================================
 
-DATA_DIR = BASE_DIR / "data"
-UPLOAD_DIR = BASE_DIR / "uploads"
+DATA_DIR = Path("/tmp/lumi_ai_data")
+UPLOAD_DIR = DATA_DIR / "uploads"
 
-DATA_DIR.mkdir(exist_ok=True)
-UPLOAD_DIR.mkdir(exist_ok=True)
-
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 INDEX_PATH = DATA_DIR / "faiss.index"
 CHUNKS_PATH = DATA_DIR / "chunks.pkl"
